@@ -1,0 +1,55 @@
+log4j.rootLogger=DEBUG,appender1
+log4j.logger.secondLogger=info,appender2
+log4j.logger.thirdLogger=DEBUG,appender3
+log4j.logger.fourthLogger=DEBUG,appender4
+
+log4j.appender.appender1=org.apache.log4j.RollingFileAppender
+log4j.appender.appender1.File=/home/zy/myuser/idea/log.log
+#log4j.appender.appender1.File=/home/proj/myjava/log.log
+log4j.appender.appender1.MaxFileSize=1024KB
+
+log4j.appender.ServerDailRollingFile.DatePattern='.'yyyy-MM-dd-HH-mm
+log4j.appender.appender1.layout=org.apache.log4j.PatternLayout
+#时间,输出优先级,[日志所属类的全名,日志所属类的类名,行号,线程名],日志信息
+log4j.appender.appender1.layout.ConversionPattern=\
+   ==== %d{yyyy-MM-dd HH:mm:ss}=======[%p]=================[%F  %L]====================%n\
+  |[%l]%n\
+  |%m%n\
+  |____________________________________________________________________________________%n\
+  %n
+log4j.appender.ServerDailyRollingFile.Append=true
+
+
+#log4j.appender.ServerDailRollingFile.DatePattern='.'yyyy-MM-dd
+log4j.appender.appender2=org.apache.log4j.RollingFileAppender
+log4j.appender.appender2.File=/home/zy/myuser/idea/data.log
+#log4j.appender.appender2.File=/home/proj/myjava/data.log
+log4j.appender.appender2.MaxFileSize=1024KB
+
+log4j.appender.appender2.layout=org.apache.log4j.PatternLayout
+#时间,输出优先级,[日志所属类的全名,日志所属类的类名,行号,线程名],日志信息
+log4j.appender.appender2.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss}[%p]-%m%n
+#log4j.appender.ServerDailyRollingFile.Append=true
+
+log4j.appender.appender3=org.apache.log4j.RollingFileAppender
+log4j.appender.appender3.File=/home/zy/myuser/idea/rpc.log
+log4j.appender.appender3.MaxFileSize=1024KB
+
+log4j.appender.appender3.layout=org.apache.log4j.PatternLayout
+#时间,输出优先级,[日志所属类的全名,日志所属类的类名,行号,线程名],日志信息
+log4j.appender.appender3.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss}[%p]-%m%n
+
+
+log4j.appender.appender4=org.apache.log4j.RollingFileAppender
+log4j.appender.appender4.File=/home/zy/myuser/idea/thread.log
+#log4j.appender.appender1.File=/home/proj/myjava/log.log
+log4j.appender.appender4.MaxFileSize=1024KB
+
+log4j.appender.appender4.layout=org.apache.log4j.PatternLayout
+#时间,输出优先级,[日志所属类的全名,日志所属类的类名,行号,线程名],日志信息
+log4j.appender.appender4.layout.ConversionPattern=\
+   ==== %d{yyyy-MM-dd HH:mm:ss}=======[%p]=================[%F  %L]====================%n\
+  |[%l]%n\
+  |%m%n\
+  |____________________________________________________________________________________%n\
+  %n
